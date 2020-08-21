@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">BankFinalProject</string>
+    <string name="app_name">MyBank App</string>
+    <string name="bankName">Accesse o MyBank</string>
+    <string name="btnLogin">Login</string>
+
 </resources>

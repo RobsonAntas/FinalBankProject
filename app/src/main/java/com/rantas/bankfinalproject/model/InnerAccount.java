@@ -1,23 +1,19 @@
 package com.rantas.bankfinalproject.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.io.Serializable;
 
-@JsonIgnoreProperties({"__v"})
-public class Account implements Serializable {
+public class InnerAccount implements Serializable {
+
     private String id;
     private String bank_branch;
     private String code;
-    private String user;
+    private User user;
     private int account_balance;
     private int status;
     private String createdAt;
     private String updatedAt;
-//    private int __v;
 
-    public Account() {
+    public InnerAccount() {
     }
 
     public String getId() {
@@ -44,11 +40,11 @@ public class Account implements Serializable {
         this.code = code;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -84,17 +80,9 @@ public class Account implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-//    public int get__v() {
-//        return __v;
-//    }
-//
-//    public void set__v(int __v) {
-//        this.__v = __v;
-//    }
-
     @Override
     public String toString() {
-        return "Account{" +
+        return "InnerAccount{" +
                 "id='" + id + '\'' +
                 ", bank_branch='" + bank_branch + '\'' +
                 ", code='" + code + '\'' +
@@ -106,8 +94,3 @@ public class Account implements Serializable {
                 '}';
     }
 }
-
-
-
-
-

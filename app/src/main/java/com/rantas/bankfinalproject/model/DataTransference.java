@@ -1,6 +1,8 @@
 package com.rantas.bankfinalproject.model;
 
-public class DataTransference {
+import java.io.Serializable;
+
+public class DataTransference implements Serializable {
 
     private String origem;
     private String destino;

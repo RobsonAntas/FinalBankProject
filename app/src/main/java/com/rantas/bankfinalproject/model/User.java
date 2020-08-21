@@ -1,6 +1,11 @@
 package com.rantas.bankfinalproject.model;
 
-public class User {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+
+@JsonIgnoreProperties({"createdAt","updatedAt","__v"})
+public class User implements Serializable {
 
     private String _id;
     private String name;
@@ -8,9 +13,9 @@ public class User {
     private String pws;
     private String telefone;
     private String avatar;
-    private String createdAt;
-    private String updatedAt;
-    private int __v;
+//    private String createdAt;
+//    private String updatedAt;
+//    private int __v;
 
     public User() {
     }
@@ -63,29 +68,30 @@ public class User {
         this.avatar = avatar;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
+//    public String getCreatedAt() {
+//        return createdAt;
+//    }
+//
+//    public void setCreatedAt(String createdAt) {
+//        this.createdAt = createdAt;
+//    }
+//
+//    public String getUpdatedAt() {
+//        return updatedAt;
+//    }
+//
+//    public void setUpdatedAt(String updatedAt) {
+//        this.updatedAt = updatedAt;
+//    }
+//
+//    public int get_v() {
+//        return __v;
+//    }
+//
+//    public void set_v(int _v) {
+//        this.__v = _v;
+//    }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public int get_v() {
-        return __v;
-    }
-
-    public void set_v(int _v) {
-        this.__v = _v;
-    }
 
     @Override
     public String toString() {
@@ -96,9 +102,6 @@ public class User {
                 ", pws='" + pws + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", avatar='" + avatar + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", _v=" + __v +
                 '}';
     }
 }

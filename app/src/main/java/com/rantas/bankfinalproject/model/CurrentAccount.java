@@ -1,6 +1,9 @@
 package com.rantas.bankfinalproject.model;
+
+import java.io.Serializable;
+
 //status 0-cancelado, 1-ativo, 2-bloqueado.
-public class CurrentAccount {
+public class CurrentAccount implements Serializable {
 
     private String cpf;
     private String account_balance;
