@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
-@JsonIgnoreProperties({"__v"})
+@JsonIgnoreProperties({"_id","__v"})
 public class Account implements Serializable {
-    private String id;
+
     private String bank_branch;
     private String code;
     private String user;
@@ -18,14 +18,6 @@ public class Account implements Serializable {
 //    private int __v;
 
     public Account() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getBank_branch() {
@@ -84,21 +76,12 @@ public class Account implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-//    public int get__v() {
-//        return __v;
-//    }
-//
-//    public void set__v(int __v) {
-//        this.__v = __v;
-//    }
-
     @Override
     public String toString() {
         return "Account{" +
-                "id='" + id + '\'' +
-                ", bank_branch='" + bank_branch + '\'' +
+                "bank_branch='" + bank_branch + '\'' +
                 ", code='" + code + '\'' +
-                ", user=" + user +
+                ", user='" + user + '\'' +
                 ", account_balance=" + account_balance +
                 ", status=" + status +
                 ", createdAt='" + createdAt + '\'' +

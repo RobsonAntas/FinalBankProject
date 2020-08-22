@@ -1,5 +1,8 @@
 package com.rantas.bankfinalproject.routerRepo;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.rantas.bankfinalproject.dao.Messenger;
 import com.rantas.bankfinalproject.model.User;
 
@@ -7,7 +10,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserRepo {
+public class UserRepo{
+
 
     public void getBankUser(final RequestResult requestResult, final User user){
 
@@ -17,7 +21,9 @@ public class UserRepo {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
-                    requestResult.successful(response.body());
+                    User user =response.body();
+                    requestResult.successful(user);
+                    Log.d("response",user.toString());
                 }else{
                     requestResult.failureMessage(new Messenger(response.code(),response.errorBody().toString()));
                 }

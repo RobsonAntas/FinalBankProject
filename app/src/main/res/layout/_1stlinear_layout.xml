@@ -21,14 +21,43 @@
             android:src="@mipmap/ic_launcher"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_gravity="left"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/_1stText"
-            android:layout_height="match_parent"
+            android:id="@+id/boasVindas"
+            android:gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Olá, seja bem vindo ao MyBank"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="20dp"/>
+            <LinearLayout
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/generoCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sr(a)"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:gravity="start"
+            android:id="@+id/nomeCliente"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:text="bem Vindo"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="0dp"
             android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -40,33 +69,69 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/_2ndText"
+            android:id="@+id/textoNumConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Saldo"
+            android:text="Nº da Conta Corrente:"
+            android:textColor="@android:color/black"
             android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/numeroCC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/_3thlayoutChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/textocpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPF:"
+            android:textColor="@android:color/black"
             android:layout_marginBottom="10dp"/>
 
         <TextView
-            android:id="@+id/_3thText"
+            android:id="@+id/numeroCpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="something"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="1dp"
             android:layout_marginBottom="10dp"/>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/_3thlinearChild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Opção" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dados Cadastrais" />
+
+        </com.google.android.material.tabs.TabLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/_1stRecycler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:listitem="@layout/recyclerview_layout"/>
-
-    </LinearLayout>
 
 </LinearLayout>
 
