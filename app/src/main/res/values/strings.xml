@@ -4,5 +4,15 @@
     <string name="btnLogin">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pagar">Pagamento</string>
+    <string name="transferir">Transferência</string>
+    <string name="depositar">Depósito</string>
+    <string name="extrato">Extrato</string>
+    <string name="atualizar">Atualizar Cadastro</string>
+    <string name="Cancelar">Cancelar Conta</string>
+    <string name="AtualizarConta">Atualizar C. Corrente</string>
+    <string name="todasCC">Vizualisar todas as C. Corrente</string>
+    <string name="todasClientes">Vizualisar todos os Clientes</string>
+    <string name="abrirCC">Abrir C. Corrente</string>
 
 </resources>

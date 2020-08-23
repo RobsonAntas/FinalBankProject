@@ -3,14 +3,17 @@ package com.rantas.bankfinalproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.rantas.bankfinalproject.dao.Messenger;
 import com.rantas.bankfinalproject.model.Account;
 import com.rantas.bankfinalproject.model.User;
@@ -23,11 +26,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    private _1stAdapter adapter;
-    private List<String> list;
-
+//    private RecyclerView recyclerView;
+//    private RecyclerView.LayoutManager layoutManager;
+//    private _1stAdapter adapter;
+//    private List<String> list;
     private TextView textView;
     private ImageView imageView;
 
@@ -69,15 +71,21 @@ public class MainActivity extends AppCompatActivity {
             }
         },user);
 
+        PageAdapter pageAdapter = new PageAdapter(getSupportFragmentManager(),this);
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        viewPager.setAdapter(pageAdapter);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
 
-        list = new ArrayList<>();
-        list.add("oi");
-        list.add("como vai");
-        list.add("Tudo bem");
-
-        this.recyclerView = findViewById(R.id._1stRecycler);
-        this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        this.adapter = new _1stAdapter(this,this.list);
-        this.recyclerView.setAdapter(this.adapter);
+//        this.list = new ArrayList<>();
+//        this.list.add("Pagar");
+//        this.list.add("Transferir");
+//        this.list.add("Depósito");
+//        this.list.add("Extrato");
+//
+//        this.recyclerView = findViewById(R.id._1stRecycler);
+//        this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        this.adapter = new _1stAdapter(this,this.list);
+//        this.recyclerView.setAdapter(this.adapter);
     }
 }
