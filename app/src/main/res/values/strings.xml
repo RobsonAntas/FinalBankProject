@@ -14,5 +14,7 @@
     <string name="todasCC">Vizualisar todas as C. Corrente</string>
     <string name="todasClientes">Vizualisar todos os Clientes</string>
     <string name="abrirCC">Abrir C. Corrente</string>
+    <string name="vizualisarDadosCliente">Dados Cadastrais do cliente</string>
+    <string name="vizualisarDadosCC">Dados Cadastrais da c. corrente</string>
 
 </resources>

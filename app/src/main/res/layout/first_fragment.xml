@@ -6,45 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/pagamento"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/_1stRecycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pagar"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="@android:color/black"
-        android:textAlignment="textStart"
-        style="@style/TextAppearance.AppCompat.Menu"/>
-
-    <TextView
-        android:id="@+id/depositar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/depositar"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="textStart"
-        style="@style/TextAppearance.AppCompat.Menu"/>
-    <TextView
-        android:id="@+id/transferir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/transferir"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="textStart"
-        style="@style/TextAppearance.AppCompat.Menu"/>
-    <TextView
-        android:id="@+id/extrato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/extrato"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="textStart"
-        style="@style/TextAppearance.AppCompat.Menu"/>
+        tools:listitem="@layout/inflatedview_layout"/>
 </LinearLayout>

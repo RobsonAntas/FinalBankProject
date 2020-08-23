@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/atualizar"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/_2ndRecycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/atualizar"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="textStart"
-        style="@style/TextAppearance.AppCompat.Menu"/>
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/transferir"-->
-<!--        android:textColor="@android:color/black"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:textAlignment="textStart"-->
-<!--        style="@style/TextAppearance.AppCompat.Menu"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/extrato"-->
-<!--        android:textColor="@android:color/black"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:textAlignment="textStart"-->
-<!--        style="@style/TextAppearance.AppCompat.Menu"/>-->
+        tools:listitem="@layout/inflatedview_layout"/>
 
 </LinearLayout>

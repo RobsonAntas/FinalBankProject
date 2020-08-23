@@ -19,52 +19,66 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface AllServices {
 
+ @Headers("Contenty-Type: application/json")
  @POST("users")
  Call<Person> createBankUser(@Body Person person);
 
+ @Headers("Contenty-Type: application/json")
  @GET("users")
  Call<User> getUser(@Header("cpf") String cpf, @Header("pws") String pws);
 
+ @Headers("Contenty-Type: application/json")
  @GET("getAllUsers")
  Call<List<User>> getAllUser(@Header("cpf") String cpf, @Header("pws") String pws);
 
+ @Headers("Contenty-Type: application/json")
  @PUT("update/{_id}")
  Call<User> updateUser(@Path("_id") String _id, @Body User user);
 
  //Services for Accounts
 
+ @Headers("Contenty-Type: application/json")
  @GET("accounts")
  Call<Account> getAccount(@Header("cpf") String cpf, @Header("pws") String pws);
 
+ @Headers("Contenty-Type: application/json")
  @GET("getAllAccounts")
  Call<List<Account>> getAllAccounts(@Header("cpf") String cpf, @Header("pws") String pws);
 
+ @Headers("Contenty-Type: application/json")
  @POST("accounts") //Headers cpf e pws, only for training @HeaderMap
  Call<AddAccount> addAccount(@HeaderMap Map<String,String> headers,@Body AddAccount addAccount);
 
+ @Headers("Contenty-Type: application/json")
  @PUT("accounts")
  Call<StatusAccount> updateAccount(@Header("cpf") String cpf, @Header("pws") String pws, @Body StatusAccount status);
 
  //Transactions
 
+ @Headers("Contenty-Type: application/json")
  @POST("pagamento")
  Call<BankSlip> doPayment(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws,@Body BankSlip bankSlip);
 
+ @Headers("Contenty-Type: application/json")
  @POST("transferencia")
  Call<DataTransference>  doTransfer(@Header("cpf") String cpf, @Header("pws") String pws, @Body DataTransference amount);
 
+ @Headers("Contenty-Type: application/json")
  @POST("deposito")
  Call<Deposit> doDeposit(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws, @Body Deposit amount);
 
+ @Headers("Contenty-Type: application/json")
  @PUT("accounts/cancel")
  Call<CancelAccount> cancelAccount(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws);
 
+ @Headers("Contenty-Type: application/json")
  @GET("getByUser")
  Call<AccountStatement> getStatement(@Header("cpf") String cpf, @Header("pws") String pws);
 
