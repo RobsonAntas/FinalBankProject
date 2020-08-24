@@ -28,85 +28,73 @@
             android:layout_height="wrap_content">
 
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/boasVindas"
+            android:layout_marginTop="25dp"
             android:gravity="start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Olá, seja bem vindo ao MyBank"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="@android:color/black"
             android:layout_marginStart="20dp"/>
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/generoCliente"
+            android:id="@+id/textTitular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sr(a)"
+            android:text="Titular da Conta:"
             android:textColor="@android:color/black"/>
         <TextView
             android:gravity="start"
             android:id="@+id/nomeCliente"
+            android:layout_marginStart="1dp"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="bem Vindo"
-            android:layout_marginStart="0dp"
-            android:layout_marginBottom="10dp"/>
-            </LinearLayout>
-        </LinearLayout>
+            android:layout_width="match_parent" />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/_2ndlayoutChild"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textoNumConta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nº da Conta Corrente:"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="10dp"
-            />
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:id="@+id/numeroCC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginStart="1dp"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/_3thlayoutChild"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textocpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CPF:"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/numeroCpf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginStart="1dp" />
     </LinearLayout>
 
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.AutofillService;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,13 +12,11 @@ import android.widget.Toast;
 
 import com.rantas.bankfinalproject.dao.Messenger;
 import com.rantas.bankfinalproject.model.User;
-import com.rantas.bankfinalproject.routerRepo.RequestResult;
-import com.rantas.bankfinalproject.routerRepo.UserRepo;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.rantas.bankfinalproject.repository.RequestResult;
+import com.rantas.bankfinalproject.repository.UserRepo;
 
 public class LoginActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

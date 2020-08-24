@@ -11,12 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rantas.bankfinalproject.ActionsActivity;
+import com.rantas.bankfinalproject.DepositoActivity;
+import com.rantas.bankfinalproject.PagamentoActivity;
 import com.rantas.bankfinalproject.R;
+import com.rantas.bankfinalproject.TransferActivity;
 
 import java.util.List;
 
 public class RecyclerAdapterF1 extends RecyclerView.Adapter<RecyclerAdapterF1.ViewHolder>{
+
     private Context context;
     private List<String> menuOptions;
     private LayoutInflater layoutInflater;
@@ -28,8 +31,10 @@ public class RecyclerAdapterF1 extends RecyclerView.Adapter<RecyclerAdapterF1.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+
         TextView textView;
         LinearLayout layout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.recyclerText);
@@ -38,8 +43,26 @@ public class RecyclerAdapterF1 extends RecyclerView.Adapter<RecyclerAdapterF1.Vi
             layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent mIntent = new Intent(context, ActionsActivity.class);
-                    context.startActivity(mIntent);
+
+                    switch (menuOptions.indexOf(menuOptions.get(getLayoutPosition()))){
+                        case 0:
+                            Intent mIntent = new Intent(context, PagamentoActivity.class);
+                            mIntent.putExtra("pagamento",menuOptions.get(getLayoutPosition()));
+                            context.startActivity(mIntent);
+                            break;
+                        case 1:
+                            Intent nIntent = new Intent(context, DepositoActivity.class);
+                            nIntent.putExtra("deposito",menuOptions.get(getLayoutPosition()));
+                            context.startActivity(nIntent);
+                            break;
+                        case 2:
+                            Intent oIntent = new Intent(context, TransferActivity.class);
+                            oIntent.putExtra("transferencia",menuOptions.get(getLayoutPosition()));
+                            context.startActivity(oIntent);
+                            break;
+                        default:
+                    }
+
                 }
             });
         }

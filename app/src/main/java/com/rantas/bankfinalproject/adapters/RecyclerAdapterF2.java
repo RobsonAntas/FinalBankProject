@@ -11,8 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.rantas.bankfinalproject.ActionsActivity;
+import com.rantas.bankfinalproject.AccountCadastroActivity;
+import com.rantas.bankfinalproject.DepositoActivity;
+import com.rantas.bankfinalproject.PagamentoActivity;
 import com.rantas.bankfinalproject.R;
+import com.rantas.bankfinalproject.TransferActivity;
+import com.rantas.bankfinalproject.UserCadastroActivity;
 
 import java.util.List;
 
@@ -38,8 +42,20 @@ public class RecyclerAdapterF2 extends RecyclerView.Adapter<RecyclerAdapterF2.Vi
             layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent nIntent = new Intent(context, ActionsActivity.class);
-                    context.startActivity(nIntent);
+                    switch (menuOptions.indexOf(menuOptions.get(getLayoutPosition()))){
+                        case 0:
+                            Intent mIntent = new Intent(context, UserCadastroActivity.class);
+                            mIntent.putExtra("cadastro",menuOptions.get(getLayoutPosition()));
+                            context.startActivity(mIntent);
+                            break;
+                        case 1:
+                            Intent nIntent = new Intent(context, AccountCadastroActivity.class);
+                            nIntent.putExtra("conta",menuOptions.get(getLayoutPosition()));
+                            context.startActivity(nIntent);
+                            break;
+                        default:
+                    }
+
                 }
             });
         }

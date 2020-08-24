@@ -3,12 +3,15 @@ package com.rantas.bankfinalproject.service;
 import com.rantas.bankfinalproject.model.Account;
 import com.rantas.bankfinalproject.model.AddAccount;
 import com.rantas.bankfinalproject.model.BankSlip;
+import com.rantas.bankfinalproject.model.Boleto;
 import com.rantas.bankfinalproject.model.CancelAccount;
 import com.rantas.bankfinalproject.model.DataTransference;
 import com.rantas.bankfinalproject.model.Deposit;
+import com.rantas.bankfinalproject.model.Extrato;
 import com.rantas.bankfinalproject.model.Person;
 import com.rantas.bankfinalproject.model.AccountStatement;
 import com.rantas.bankfinalproject.model.StatusAccount;
+import com.rantas.bankfinalproject.model.TranfComprovante;
 import com.rantas.bankfinalproject.model.User;
 
 import java.util.List;
@@ -63,16 +66,16 @@ public interface AllServices {
  //Transactions
 
  @Headers("Contenty-Type: application/json")
- @POST("pagamento")
- Call<BankSlip> doPayment(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws,@Body BankSlip bankSlip);
+ @POST("transaction/pagamento")
+ Call<Extrato> doPayment(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws, @Body BankSlip bankSlip);
 
  @Headers("Contenty-Type: application/json")
- @POST("transferencia")
- Call<DataTransference>  doTransfer(@Header("cpf") String cpf, @Header("pws") String pws, @Body DataTransference amount);
+ @POST("transaction/transferencia")
+ Call<TranfComprovante>  doTransfer(@Header("cpf") String cpf, @Header("pws") String pws, @Body DataTransference amount);
 
  @Headers("Contenty-Type: application/json")
- @POST("deposito")
- Call<Deposit> doDeposit(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws, @Body Deposit amount);
+ @POST("transaction/deposito")
+ Call<Boleto> doDeposit(@Header("account") String account, @Header("cpf") String cpf, @Header("pws") String pws, @Body Deposit amount);
 
  @Headers("Contenty-Type: application/json")
  @PUT("accounts/cancel")

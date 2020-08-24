@@ -1,8 +1,14 @@
 package com.rantas.bankfinalproject.model;
 
-public class Boleto {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+@JsonIgnoreProperties({"mensagem"})
+public class Boleto implements Serializable {
+
+    private String mensagem;
+    private String codigo_de_barras;
     private String boleto;
-    private int amount;
 
     public Boleto() {
     }
@@ -15,19 +21,25 @@ public class Boleto {
         this.boleto = boleto;
     }
 
-    public int getAmount() {
-        return amount;
+    public String getMensagem() {
+        return mensagem;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public String getCodigo_de_barras() {
+        return codigo_de_barras;
+    }
+
+    public void setCodigo_de_barras(String codigo_de_barras) {
+        this.codigo_de_barras = codigo_de_barras;
     }
 
     @Override
     public String toString() {
-        return "Boleto{" +
-                "boleto='" + boleto + '\'' +
-                ", amount=" + amount +
-                '}';
+        return  "Depósito efetuado com sucesso"+"\n"+
+               "Código de Barras: "+getCodigo_de_barras()+"\n";
     }
 }

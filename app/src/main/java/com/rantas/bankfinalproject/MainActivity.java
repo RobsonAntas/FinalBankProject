@@ -3,7 +3,9 @@ package com.rantas.bankfinalproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -15,11 +17,12 @@ import com.rantas.bankfinalproject.adapters.PageAdapter;
 import com.rantas.bankfinalproject.dao.Messenger;
 import com.rantas.bankfinalproject.model.Account;
 import com.rantas.bankfinalproject.model.User;
-import com.rantas.bankfinalproject.routerRepo.AccountRepo;
-import com.rantas.bankfinalproject.routerRepo.RequestResult;
+import com.rantas.bankfinalproject.repository.AccountRepo;
+import com.rantas.bankfinalproject.repository.RequestResult;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String HEADER_SHARED ="header";
+    public SharedPreferences preferences;
     private TextView textView;
     private ImageView imageView;
 
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout._1stlinear_layout);
+
+        preferences = getSharedPreferences(HEADER_SHARED, Context.MODE_PRIVATE);
 
         this.textView = (TextView) findViewById(R.id.nomeCliente);
         this.imageView = (ImageView) findViewById(R.id._1stAvatar);
@@ -41,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 //        Picasso.get().load(url).into(imageView);
         this.textView.setText(user.getName());
 
+        //O retorno da user da conta é o id e não o cpf, porisso sharedpreferance
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("cpf",user.getCpf());
+        editor.putString("pws",user.getPws());
+        editor.putString("nome",user.getName());
+        editor.apply();
+
         AccountRepo accountRepo = new AccountRepo();
         accountRepo.getBankAccount(new RequestResult() {
             @Override
@@ -48,10 +60,13 @@ public class MainActivity extends AppCompatActivity {
                 Account account = (Account) result;
                 TextView textView1 = (TextView)findViewById(R.id.numeroCC);
                 textView1.setText(account.getCode());
+                SharedPreferences.Editor editor1 = preferences.edit();
+                editor1.putString("Nccorrente",account.getCode());
+                editor1.apply();
 
                 TextView textView2 = (TextView)findViewById(R.id.numeroCpf);
-                textView2.setText(account.getUser());
-
+                textView2.setText(preferences.getString("cpf",""));
+                Log.d("sharedPreferance",preferences.getString("cpf",""));
             }
 
             @Override

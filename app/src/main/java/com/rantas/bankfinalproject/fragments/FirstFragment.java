@@ -31,7 +31,6 @@ public class FirstFragment extends Fragment {
         menuOptions.add("Pagamento");
         menuOptions.add("Depósito");
         menuOptions.add("Transferência");
-        menuOptions.add("Extrato");
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);

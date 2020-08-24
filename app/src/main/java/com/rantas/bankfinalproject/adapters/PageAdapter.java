@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.rantas.bankfinalproject.fragments.FirstFragment;
 import com.rantas.bankfinalproject.fragments.SecondFragment;
-import com.rantas.bankfinalproject.fragments.ThirdFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
@@ -32,9 +31,7 @@ public class PageAdapter extends FragmentPagerAdapter {
                 break;
             case 1:
                 fragment = new SecondFragment();
-                break;
-            case 2:
-                fragment = new ThirdFragment();
+
         }
         return fragment;
     }
@@ -47,8 +44,6 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return "Menu Opções";
             case 1:
                 return "Dados Cadastrais";
-            case 2:
-                return "Admin Área";
         }
         return null;
 
@@ -56,6 +51,6 @@ public class PageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }
