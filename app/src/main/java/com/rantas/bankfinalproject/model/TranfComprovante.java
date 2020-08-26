@@ -1,10 +1,12 @@
 package com.rantas.bankfinalproject.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+@JsonIgnoreProperties({"mensagem"})
 public class TranfComprovante implements Serializable {
 
-    private String menssagem;
+//    private String menssagem;
     private Comprovante comprovante;
     private String _id;
     private int source_transaction;
@@ -16,13 +18,13 @@ public class TranfComprovante implements Serializable {
     public TranfComprovante() {
     }
 
-    public String getMenssagem() {
-        return menssagem;
-    }
-
-    public void setMenssagem(String menssagem) {
-        this.menssagem = menssagem;
-    }
+//    public String getMenssagem() {
+//        return menssagem;
+//    }
+//
+//    public void setMenssagem(String menssagem) {
+//        this.menssagem = menssagem;
+//    }
 
     public Comprovante getComprovante() {
         return comprovante;
@@ -83,8 +85,7 @@ public class TranfComprovante implements Serializable {
     @Override
     public String toString() {
         return "TranfComprovante{" +
-                "menssagem='" + menssagem + '\'' +
-                ", comprovante=" + comprovante +
+                "comprovante=" + comprovante +
                 ", _id='" + _id + '\'' +
                 ", source_transaction=" + source_transaction +
                 ", amount=" + amount +

@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountCadastroActivity"></activity>
-        <activity android:name=".UserCadastroActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".TransferActivity" />
-        <activity android:name=".DepositoActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".activities.ExtratoActivity"></activity>
+        <activity android:name=".activities.AccountCadastroActivity" />
+        <activity android:name=".activities.UserCadastroActivity" />
+        <activity android:name=".activities.AdminActivity" />
+        <activity android:name=".activities.TransferActivity" />
+        <activity android:name=".activities.DepositoActivity" />
+        <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,13 +25,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".LoginActivity">
+            android:name=".activities.MainActivity"
+            android:parentActivityName=".activities.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity" />
+                android:value=".activities.LoginActivity" />
         </activity>
-        <activity android:name=".PagamentoActivity" />
+        <activity android:name=".activities.PagamentoActivity" />
     </application>
 
 </manifest>

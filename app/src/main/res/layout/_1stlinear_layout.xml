@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="15dp"
+    android:padding="8dp"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -16,9 +16,8 @@
 
         <ImageView
             android:id="@+id/_1stAvatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
+            android:layout_width="110sp"
+            android:layout_height="135sp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"/>
         <LinearLayout
@@ -99,9 +98,9 @@
 
 
     <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"

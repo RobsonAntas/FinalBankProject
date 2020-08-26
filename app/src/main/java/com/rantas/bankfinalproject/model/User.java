@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
-@JsonIgnoreProperties({"createdAt","updatedAt","__v"})
+@JsonIgnoreProperties({"__v"})
 public class User implements Serializable {
 
     private String _id;
@@ -13,8 +13,8 @@ public class User implements Serializable {
     private String pws;
     private String telefone;
     private String avatar;
-//    private String createdAt;
-//    private String updatedAt;
+    private String createdAt;
+    private String updatedAt;
 //    private int __v;
 
     public User() {
@@ -68,21 +68,21 @@ public class User implements Serializable {
         this.avatar = avatar;
     }
 
-//    public String getCreatedAt() {
-//        return createdAt;
-//    }
-//
-//    public void setCreatedAt(String createdAt) {
-//        this.createdAt = createdAt;
-//    }
-//
-//    public String getUpdatedAt() {
-//        return updatedAt;
-//    }
-//
-//    public void setUpdatedAt(String updatedAt) {
-//        this.updatedAt = updatedAt;
-//    }
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 //
 //    public int get_v() {
 //        return __v;
@@ -95,13 +95,10 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
-                "_id='" + _id + '\'' +
-                ", name='" + name + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", pws='" + pws + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", avatar='" + avatar + '\'' +
-                '}';
+        return "Nome: "+getName()+"\n"+
+                "CPF: "+getCpf()+"\n"+
+                "Telefone: "+getTelefone()+"\n"+
+                "Cliente do Mybank desde: "+getCreatedAt()+"\n"+
+                "Última Atualização: "+getUpdatedAt()+"\n";
     }
 }

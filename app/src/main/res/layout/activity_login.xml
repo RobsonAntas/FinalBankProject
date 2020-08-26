@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".LoginActivity">
+    tools:context=".activities.LoginActivity">
 
     <ImageView
         android:id="@+id/margin"
@@ -13,7 +13,8 @@
         android:layout_height="100sp"
         android:background="@android:color/white"
         android:scaleType="centerCrop"
-        android:src="@drawable/mybanklogo" />
+        android:src="@drawable/mybanklogo"
+         />
 
     <TextView
         android:id="@+id/banklogoMarca"
@@ -30,7 +31,7 @@
         android:layout_marginVertical="10dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:hint="User"
+        android:hint="Cpf"
         android:inputType="textPersonName" />
 
     <EditText

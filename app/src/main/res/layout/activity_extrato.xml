@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="8dp"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DepositoActivity">
+    android:orientation="vertical"
+    tools:context=".activities.ExtratoActivity">
 
     <TextView
-        android:id="@+id/deposito"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
+        android:id="@+id/extrato"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Extrato"
+        android:textColor="@android:color/black"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-<LinearLayout
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -67,65 +67,62 @@
             android:id="@+id/textquantia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valor:"
+            android:text="Debitado:"
             android:textColor="@android:color/black"/>
-        <EditText
+        <TextView
             android:id="@+id/quantia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="5"/>
+            />
     </LinearLayout>
-    <Button
-        android:id="@+id/btnDeposito"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Depositar"/>
     <LinearLayout
-        android:visibility="invisible"
-        android:id="@+id/layoutSenha"
-        android:layout_gravity="center"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_gravity="center"
-            android:id="@+id/pass"
+            android:id="@+id/textsaldoAnterior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Senha"/>
-
-        <EditText
-            android:layout_gravity="center"
-            android:id="@+id/editPassword"
+            android:text="Saldo Antes da movimentacao:"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/saldoAnterior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPassword" />
+            />
     </LinearLayout>
-    <Button
-        android:visibility="invisible"
-        android:layout_gravity="center"
-        android:id="@+id/confirma"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirma"/>
-    <TextView
-        android:layout_gravity="center"
-        android:visibility="invisible"
-        android:id="@+id/mensagemcomprovante"
-        android:text="Comprovante"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textsaldoPosterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo Antes da movimentacao:"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/saldoPosterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textAtualizacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo Antes da movimentacao:"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/atualizacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 
-    <TextView
-        android:layout_gravity="center"
-        android:visibility="invisible"
-        android:id="@+id/comprovante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+
 </LinearLayout>

@@ -1,7 +1,9 @@
 package com.rantas.bankfinalproject.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+//@JsonIgnoreProperties({"mensagem"})
 public class DataTransference implements Serializable {
 
     private String origem;

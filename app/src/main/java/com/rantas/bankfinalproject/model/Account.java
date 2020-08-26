@@ -78,15 +78,13 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "bank_branch='" + bank_branch + '\'' +
-                ", code='" + code + '\'' +
-                ", user='" + user + '\'' +
-                ", account_balance=" + account_balance +
-                ", status=" + status +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                '}';
+        return
+                "Agência: "+getBank_branch()+"\n"+
+                "Conta Corrente: "+getCode()+"\n"+
+                "Saldo: "+ getAccount_balance()+"\n"+
+                "Criada em: "+ getCreatedAt()+"\n"+
+                "Última atualização: "+ getUpdatedAt()+"\n";
+
     }
 }
 
